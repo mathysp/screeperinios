@@ -21,9 +21,11 @@ module.exports.loop = function () {
   }
 
   var roles = {};
-  roles.builder = {name: 'builder', desired: 1};
-  roles.Harvester = {name: 'harvester', desired: 1};
-  roles.upgrader = {name: 'upgrader', desired: 1};
+  roles = [
+    {name: 'builder', desired: 1},
+    {name: 'harvester', desired: 1},
+    {name: 'upgrader', desired: 1}
+  ];
   //Game.creeps.roles = roles;
 
   for(var role in roles) {
