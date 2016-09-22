@@ -20,17 +20,16 @@ module.exports.loop = function () {
     this.desiredNumber = desiredNumber;
   }
 
-  var roles = {};
-  roles = {
+  var roles = {
     builder: {name: 'builder', desired: 1},
     harvester: {name: 'harvester', desired: 1},
     upgrader: {name: 'upgrader', desired: 1}
   };
   //Game.creeps.roles = roles;
 
-  for(var unitRole in unitRoles) {
-    var units = _.filter(Game.creeps, (creep) => creep.memory.role == unitRoles[unitRole].name)
-    console.log(unitRoles[unitRole].name + ' ' + units.length);
+  for(var role in roles) {
+    var units = _.filter(Game.creeps, (creep) => creep.memory.role == roles[role].name)
+    console.log(roles[role].name + ' ' + units.length);
   }
 
 
