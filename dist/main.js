@@ -27,9 +27,14 @@ module.exports.loop = function () {
   };
   //Game.creeps.roles = roles;
 
-  for(var role in roles) {
-    var units = _.filter(Game.creeps, (creep) => creep.memory.role == roles[role].name)
-    console.log(roles[role].name + ' ' + units.length);
+  for(var unitRole in roles) {
+    var units = _.filter(Game.creeps, (creep) => creep.memory.role == roles[unitRole].name)
+    console.log(roles[unitRole].name + ' ' + units.length);
+
+    if(units.length < roles[unitRole].desired) {
+      var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE], undefined, {role: roles[unitRole].name});
+      console.log('Spawning new : ' + roles[unitRole].name + ' ' + newName);
+    }
   }
 
 
