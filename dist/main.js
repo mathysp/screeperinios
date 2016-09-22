@@ -13,6 +13,20 @@ module.exports.loop = function () {
     }
   }
 
+
+
+  function role(name, desiredNumber) {
+    this.name = name;
+    this.desiredNumber = desiredNumber;
+  }
+
+  Game.creeps.roles = {};
+  roles.builder = new role('builder', 1);
+  roles.Hhrvester = new role('harvester', 1);
+  roles.upgrader = new role('upgrader', 1);
+
+
+
   var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester')
   console.log('Harvesters: ' + harvesters.length);
 
