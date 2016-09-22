@@ -21,14 +21,14 @@ module.exports.loop = function () {
   }
 
   var roles = {};
-  roles.builder = new UnitRole('builder', 1);
-  roles.Hhrvester = new UnitRole('harvester', 1);
-  roles.upgrader = new UnitRole('upgrader', 1);
+  roles.builder = {name: 'builder', desired: 1};
+  roles.Harvester = {name: 'harvester', desired: 1};
+  roles.upgrader = {name: 'upgrader', desired: 1};
   //Game.creeps.roles = roles;
 
   for(var role in roles) {
-    var units = _.filter(Game.creeps, (creep) => creep.memory.role == role)
-    console.log(role + ' ' + units.length);
+    var units = _.filter(Game.creeps, (creep) => creep.memory.role == role.name)
+    console.log(role.name + ' ' + units.length);
   }
 
 
