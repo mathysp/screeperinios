@@ -27,8 +27,8 @@ module.exports.loop = function () {
   //Game.creeps.roles = roles;
 
   for(var role in roles) {
-    var units = _.filter(Game.creeps, (creep) => creep.memory.role == role.name)
-    console.log(role.name + ' ' + units.length);
+    var units = _.filter(Game.creeps, (creep) => creep.memory.role == role)
+    console.log(role + ' ' + units.length);
   }
 
 
