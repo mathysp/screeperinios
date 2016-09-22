@@ -15,19 +15,24 @@ module.exports.loop = function () {
 
 
 
-  function Role(name, desiredNumber) {
+  function UnitRole(name, desiredNumber) {
     this.name = name;
     this.desiredNumber = desiredNumber;
   }
 
   var roles = {};
-  roles.builder = new Role('builder', 1);
-  roles.Hhrvester = new Role('harvester', 1);
-  roles.upgrader = new Role('upgrader', 1);
+  roles.builder = new UnitRole('builder', 1);
+  roles.Hhrvester = new UnitRole('harvester', 1);
+  roles.upgrader = new UnitRole('upgrader', 1);
   //Game.creeps.roles = roles;
 
+  for(var role in roles) {
+    var units = _.filter(Game.creeps, (creep) => creep.memory.role == role.name)
+    console.log(role.name + ' ' + units.length);
+  }
 
 
+/*
   var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester')
   console.log('Harvesters: ' + harvesters.length);
 
@@ -51,6 +56,7 @@ module.exports.loop = function () {
     var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE], undefined, {role: 'upgrader'});
     console.log('Spawning new Upgrader: ' + newName);
   }
+*/
 
 
   var tower = Game.getObjectById('507f86d4d161584d2c854c19');
