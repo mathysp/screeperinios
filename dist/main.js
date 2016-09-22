@@ -15,14 +15,15 @@ module.exports.loop = function () {
 
 
 
-  function role(name, desiredNumber) {
+  function Role(name, desiredNumber) {
     this.name = name;
     this.desiredNumber = desiredNumber;
   }
-  var roles = {}
-  roles.builder = new role('builder', 1);
-  roles.Hhrvester = new role('harvester', 1);
-  roles.upgrader = new role('upgrader', 1);
+
+  var roles = {};
+  roles.builder = new Role('builder', 1);
+  roles.Hhrvester = new Role('harvester', 1);
+  roles.upgrader = new Role('upgrader', 1);
   Game.creeps.roles = roles;
 
 
