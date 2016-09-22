@@ -19,11 +19,11 @@ module.exports.loop = function () {
     this.name = name;
     this.desiredNumber = desiredNumber;
   }
-
-  Game.creeps.roles = {};
+  var roles = {}
   roles.builder = new role('builder', 1);
   roles.Hhrvester = new role('harvester', 1);
   roles.upgrader = new role('upgrader', 1);
+  Game.creeps.roles = roles;
 
 
 
