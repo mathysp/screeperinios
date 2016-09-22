@@ -24,7 +24,7 @@ module.exports.loop = function () {
   roles.builder = new Role('builder', 1);
   roles.Hhrvester = new Role('harvester', 1);
   roles.upgrader = new Role('upgrader', 1);
-  Game.creeps.roles = roles;
+  //Game.creeps.roles = roles;
 
 
 
