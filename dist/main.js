@@ -1,8 +1,22 @@
-// Hello Game!
-
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
+
+
+// Unit Role Object
+function Unitrole(name, desiredNumber) {
+  this.name = name;
+  this.desired = desiredNumber;
+}
+
+
+// Roles object
+var roles = {
+  builder: new Unitrole('builder', 2),
+  harvester: new Unitrole('harvester', 2),
+  upgrader: new Unitrole('upgrader', 2)
+};
+
 
 module.exports.loop = function () {
 
@@ -14,29 +28,29 @@ module.exports.loop = function () {
     }
   }
 
-
-  // Unit Role Object
-  function unitrole(name, desiredNumber) {
-    this.name = name;
-    this.desired = desiredNumber;
-  }
-
-  // Roles object
-  var roles = {
-    builder: new unitrole('builder', 2),
-    harvester: new unitrole('harvester', 2),
-    upgrader: new unitrole('upgrader', 2)
-  };
-
   for(var role in roles) {
     var units = _.filter(Game.creeps, (creep) => creep.memory.role == roles[role].name)
-    console.log(roles[role].name + '; Current: ' + units.length + ', Desired: ' + roles[role].desired);
+    //console.log(roles[role].name + '; Current: ' + units.length + ', Desired: ' + roles[role].desired);
 
     if(units.length < roles[role].desired) {
       var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE], undefined, {role: roles[role].name});
       console.log('Spawning new : ' + roles[role].name + ' ' + newName);
     }
   }
+
+
+
+  /*
+    ResourceManager
+   */
+
+  // get the current Resources
+
+  // Get an idea of the resource income
+
+  // Spend the income
+
+
 
 
 
