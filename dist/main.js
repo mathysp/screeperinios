@@ -18,7 +18,7 @@ module.exports.loop = function () {
   // Unit Role Object
   function unitrole(name, desiredNumber) {
     this.name = name;
-    this.desiredNumber = desiredNumber;
+    this.desired = desiredNumber;
   }
 
   // Roles object
