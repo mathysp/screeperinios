@@ -32,7 +32,12 @@ for(var name in Game.rooms) {
   var sources = MeinRoom.find(FIND_SOURCES);
   for(var source in sources) {
     var sauce = sources[source];
-    Game.memory.saucy = sauce.lookAtArea(sauce.pos.y-1, sauce.pos.x-1, sauce.pos.y+1, sauce.pos.x+1);
+    var sourceTiles = MeinRoom.lookAtArea(sauce.pos.y-1, sauce.pos.x-1, sauce.pos.y+1, sauce.pos.x+1);
+
+    for(var sourceTile in sourceTiles) {
+      console.log(sourceTile.type);
+    }
+
     //source.look()
   }
 

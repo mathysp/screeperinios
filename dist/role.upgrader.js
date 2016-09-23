@@ -30,7 +30,7 @@ var roleUpgrader = {
               ) && structure.energy == structure.energyCapacity;
         }
       })
-      if(creep.harvest(storages[0]) == ERR_NOT_IN_RANGE) {
+      if(creep.transfer(storages[0]) == ERR_NOT_IN_RANGE) {
         creep.moveTo(storages[0]);
       }
     }

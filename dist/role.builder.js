@@ -29,11 +29,10 @@ var roleBuilder = {
       var storages = creep.room.find(FIND_STRUCTURES, {
         filter: (structure) => {
           return (structure.structureType == STRUCTURE_EXTENSION ||
-              structure.structureType == STRUCTURE_SPAWN
-              ) && structure.energy == structure.energyCapacity;
+              structure.structureType == STRUCTURE_SPAWN) && structure.energy == structure.energyCapacity;
         }
       })
-      if(creep.harvest(storages[0]) == ERR_NOT_IN_RANGE) {
+      if(creep.transfer(storages[0]) == ERR_NOT_IN_RANGE) {
         creep.moveTo(storages[0]);
       }
     }
