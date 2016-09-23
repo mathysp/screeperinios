@@ -23,8 +23,8 @@ module.exports.loop = function () {
 
   // Roles object
   var roles = {
-    builder: new unitrole('builder', 1),
-    harvester: new unitrole('harvester', 1),
+    builder: new unitrole('builder', 2),
+    harvester: new unitrole('harvester', 2),
     upgrader: new unitrole('upgrader', 1)
   };
 
