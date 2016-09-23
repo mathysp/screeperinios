@@ -12,10 +12,32 @@ function Unitrole(name, desiredNumber) {
 
 // Roles object
 var roles = {
-  builder: new Unitrole('builder', 4),
+  builder: new Unitrole('builder', 3),
   harvester: new Unitrole('harvester', 6),
-  upgrader: new Unitrole('upgrader', 4)
+  upgrader: new Unitrole('upgrader', 3)
 };
+
+
+/*
+ ResourceManager
+ */
+
+// get the current Resources
+for(var name in Game.rooms) {
+  //console.log(name);
+  var MeinRoom = Game.rooms[name];
+  //console.log(MeinRoom);
+
+  //get sources
+  var sources = MeinRoom.find(FIND_SOURCES);
+  for(var source in sources) {
+    var sauce = sources[source];
+    Game.memory.saucy = sauce.lookAtArea(Sauce.pos.y-1, Sauce.pos.x-1, Sauce.pos.y+1, Sauce.pos.x+1);
+    //source.look()
+  }
+
+
+}
 
 
 module.exports.loop = function () {
@@ -33,29 +55,14 @@ module.exports.loop = function () {
     //console.log(roles[role].name + '; Current: ' + units.length + ', Desired: ' + roles[role].desired);
 
     if(units.length < roles[role].desired) {
-      var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE], undefined, {role: roles[role].name});
+      var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE,MOVE], undefined, {role: roles[role].name});
       console.log('Spawning new : ' + roles[role].name + ' ' + newName);
     }
   }
 
 
 
-  /*
-    ResourceManager
-   */
 
-  // get the current Resources
-  for(var name in Game.rooms) {
-    //console.log(name);
-    var MeinRoom = Game.rooms[name];
-    //console.log(MeinRoom);
-
-    //MeinRoom.energyCapacity
-    //MeinRoom.energyCapacityAvailable
-
-    console.log(MeinRoom.energyAvailable);
-
-  }
   // Get an idea of the resource income
 
   // Spend the income
