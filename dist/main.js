@@ -30,7 +30,7 @@ module.exports.loop = function () {
 
   for(var role in roles) {
     var units = _.filter(Game.creeps, (creep) => creep.memory.role == roles[role].name)
-    console.log(roles[role].name + ' ' + units.length);
+    console.log(roles[role].name + '; Current: ' + units.length + ', Desired: ');
 
     if(units.length < roles[role].desired) {
       var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE], undefined, {role: roles[role].name});
