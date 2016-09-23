@@ -38,7 +38,7 @@ for(var name in Game.rooms) {
     mineableTiles += sourceTilesFiltered.length;
 
     sourceTilesFiltered.forEach(function(sourceTile) {
-      console.log(sourceTile.type)
+      //console.log(sourceTile.type)
     });
 
   }
