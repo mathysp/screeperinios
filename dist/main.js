@@ -12,9 +12,9 @@ function Unitrole(name, desiredNumber) {
 
 // Roles object
 var roles = {
-  builder: new Unitrole('builder', 2),
-  harvester: new Unitrole('harvester', 2),
-  upgrader: new Unitrole('upgrader', 2)
+  builder: new Unitrole('builder', 4),
+  harvester: new Unitrole('harvester', 6),
+  upgrader: new Unitrole('upgrader', 4)
 };
 
 
@@ -45,7 +45,17 @@ module.exports.loop = function () {
    */
 
   // get the current Resources
+  for(var name in Game.rooms) {
+    //console.log(name);
+    var MeinRoom = Game.rooms[name];
+    //console.log(MeinRoom);
 
+    //MeinRoom.energyCapacity
+    //MeinRoom.energyCapacityAvailable
+
+    console.log(MeinRoom.energyAvailable);
+
+  }
   // Get an idea of the resource income
 
   // Spend the income
