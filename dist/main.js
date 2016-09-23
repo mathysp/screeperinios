@@ -10,17 +10,13 @@ function Unitrole(name, desiredNumber) {
 }
 
 
-// Roles object
-var roles = {
-  builder: new Unitrole('builder', 3),
-  harvester: new Unitrole('harvester', 6),
-  upgrader: new Unitrole('upgrader', 3)
-};
 
 
 /*
  ResourceManager
  */
+
+var mineableTiles = 0;
 
 // get the current Resources
 for(var name in Game.rooms) {
@@ -32,17 +28,38 @@ for(var name in Game.rooms) {
   var sources = MeinRoom.find(FIND_SOURCES);
   for(var source in sources) {
     var sauce = sources[source];
-    var sourceTiles = MeinRoom.lookAtArea(sauce.pos.y-1, sauce.pos.x-1, sauce.pos.y+1, sauce.pos.x+1);
+    var sourceTiles = MeinRoom.lookAtArea(sauce.pos.y-1, sauce.pos.x-1, sauce.pos.y+1, sauce.pos.x+1, true);
 
-    for(var sourceTile in sourceTiles) {
-      console.log(sourceTile.type);
-    }
+    sourceTilesFiltered = sourceTiles.filter(function (el) {
+      return el.type == 'terrain' &&
+          el.terrain == 'plain';
+    });
 
-    //source.look()
+    mineableTiles += sourceTilesFiltered.length;
+
+    sourceTilesFiltered.forEach(function(sourceTile) {
+      console.log(sourceTile.type)
+    });
+
   }
+
+  // Get an idea of the resource income
+
+  // Spend the income
 
 
 }
+
+
+// Roles object
+var roles = {
+  builder: new Unitrole('builder', 3),
+  harvester: new Unitrole('harvester', mineableTiles*2), //@TODO: Rework *2 into rangefinding algorythm
+  upgrader: new Unitrole('upgrader', 3)
+};
+
+
+
 
 
 module.exports.loop = function () {
@@ -66,11 +83,6 @@ module.exports.loop = function () {
   }
 
 
-
-
-  // Get an idea of the resource income
-
-  // Spend the income
 
 
 
