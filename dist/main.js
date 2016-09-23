@@ -32,7 +32,7 @@ for(var name in Game.rooms) {
   var sources = MeinRoom.find(FIND_SOURCES);
   for(var source in sources) {
     var sauce = sources[source];
-    Game.memory.saucy = sauce.lookAtArea(Sauce.pos.y-1, Sauce.pos.x-1, Sauce.pos.y+1, Sauce.pos.x+1);
+    Game.memory.saucy = sauce.lookAtArea(sauce.pos.y-1, sauce.pos.x-1, sauce.pos.y+1, sauce.pos.x+1);
     //source.look()
   }
 
