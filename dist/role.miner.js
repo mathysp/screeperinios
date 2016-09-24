@@ -6,8 +6,6 @@
 var miner = {
   parts: [
     [MOVE, WORK, WORK],
-    [MOVE, WORK, WORK, WORK],
-    [MOVE, WORK, WORK, WORK, WORK],
     [MOVE, WORK, WORK, WORK, WORK, WORK],
     [MOVE, WORK, WORK, WORK, WORK, WORK, WORK]
   ],
@@ -66,10 +64,10 @@ var miner = {
     if(creepsNeeded > 5)
         creepsNeeded = 5;
 
-/*    for(var i = 0; i < creepsNeeded; i++)
+    for(var i = 0; i < creepsNeeded; i++)
         Memory.spawnQueue.unshift({ type: 'miner_helper', memory: {
           miner: creep.id
-        }});*/
+        }});
 
     creep.memory.helpersNeeded = creepsNeeded;
   },
