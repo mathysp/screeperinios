@@ -28,7 +28,39 @@ var proto = {
       this.beforeAge();
   },
 
-  getParts: function() { },
+  getParts: function() {
+    var _ = require('lodash');
+
+    var room;
+    for(var index in Game.rooms) {
+      room = Game.rooms[index]
+    }
+
+    var extensions = room.find(FIND_STRUCTURES,  {
+      filter: (structure) => {
+        return structure.structureType == STRUCTURE_EXTENSION && structure.energy >= 200;
+      }
+    }).length;
+   /* var extensions = Game.getRoom('1-1').find(Game.MY_STRUCTURES, {
+      filter: function(structure)
+      {
+        return (structure.structureType == Game.STRUCTURE_EXTENSION && structure.energy >= 200);
+      }
+    }).length;*/
+
+    var parts = _.cloneDeep(this.parts);
+    if(typeof parts[0] != "object")
+      return this.parts;
+
+    parts.reverse();
+
+    for(var i in parts)
+    {
+      if((parts[i].length - 5) <= extensions) {
+        return parts[i];
+      }
+    }
+  },
 
   action: function() { },
 

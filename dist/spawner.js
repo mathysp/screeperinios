@@ -20,8 +20,6 @@ module.exports = {
     if(!Memory.spawnQueue.length)
         return;
 
-    console.log(Memory.spawnQueue);
-
     var spawns = null;
     for(var index in Game.rooms) {
       var room = Game.rooms[index];
@@ -86,8 +84,8 @@ module.exports = {
           name = tryName;
     }
     
-    console.log('Spawning ' + role);
-    spawnPoint.createCreep(manager.getRoleBodyParts(role), name, memory);
+    if(spawnPoint.createCreep(manager.getRoleBodyParts(role), name, memory))
+        console.log('Spawning ' + role);
   },
 
   canSpawn: function (spawnPoint, role) {
