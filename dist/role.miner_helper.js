@@ -65,7 +65,7 @@ var helper = {
     var target = null;
 
     // Drop Off energy
-
+    return;
   }
 
 
