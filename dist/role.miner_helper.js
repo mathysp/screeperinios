@@ -32,7 +32,7 @@ var helper = {
   },
 
 
-  attach: function () {
+  action: function () {
     var creep = this.creep;
 
     if (creep.memory.courier !== undefined && creep.memory.courier == true) {
@@ -50,7 +50,7 @@ var helper = {
       return;
     }
 
-    if(creep.energy < creep.energyCapacity) {
+    if(creep.carry.energy < creep.carryCapacity) {
       if(creep.pos.isNearTo(miner)) {
         var energy = creep.pos.findInRange(Game.DROPPED_ENERGY, 1)[0];
         creep.pickup(energy);
