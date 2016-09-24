@@ -83,8 +83,9 @@ module.exports = {
       if(Game.creeps[tryName] == undefined)
           name = tryName;
     }
-    
-    if(spawnPoint.createCreep(manager.getRoleBodyParts(role), name, memory))
+
+    var parts = manager.getRoleBodyParts(role);
+    if(spawnPoint.createCreep(parts, name, memory))
         console.log('Spawning ' + role);
   },
 
