@@ -6,7 +6,7 @@ module.exports = function (type, queued) {
   for(var index in Game.rooms) {
     var room = Game.rooms[index]
   }
-
+  
   var count = room.find(FIND_MY_CREEPS, {
     filter: function(creep) {
       if(creep.memory.role == type)

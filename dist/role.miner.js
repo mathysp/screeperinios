@@ -18,7 +18,7 @@ var miner = {
             || Memory.sources[source.id].miner == creep.id)
           return true;
 
-        if(Game.getObjectById(Memory.sources[source.id].minder) == null)
+        if(Game.getObjectById(Memory.sources[source.id].miner) == null)
           return true;
 
         return false;
@@ -32,7 +32,7 @@ var miner = {
             || Memory.sources[source.id].miner == creep.id)
             return true;
 
-        if(Game.getObjectById(Memory.sources[source.id].minder) == null)
+        if(Game.getObjectById(Memory.sources[source.id].miner) == null)
             return true;
 
         return false;
@@ -105,7 +105,7 @@ var miner = {
      if(Memory.sources[source.id] == undefined)
          Memory.sources[source.id] = { id: source.id };
 
-    Memory.sources[source.id].minder = creep.id;
+    Memory.sources[source.id].miner = creep.id;
 
     creep.moveTo(source);
     creep.harvest(source);
