@@ -6,11 +6,8 @@ var factory = require('factory');
 factory.init();
 factory.run();
 
-//spawner.spawnNextInQueue();
+spawner.spawnNextInQueue();
 
 // factory.buildArmyWhileIdle();
 
-//performRoles(Game.creeps);
-
-
-// @TODO: Refactor findNearest(
+performRoles(Game.creeps);
