@@ -52,6 +52,8 @@ module.exports = {
         return;
     
     toSpawnAt = toSpawnAt[0];
+
+    console.log(Memory.spawnQueue);
     
     this.spawn(role.type, role.memory, toSpawnAt);
     

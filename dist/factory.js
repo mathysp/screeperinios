@@ -22,9 +22,9 @@ module.exports = {
 
     if(Memory.requiredCreeps == undefined) {
       Memory.requiredCreeps = [
-        'miner',
-        'miner',
-        'miner' //1
+        'miner', // 1
+        'builder', // 1
+        'miner'  // 2
       ];
     }
   },
