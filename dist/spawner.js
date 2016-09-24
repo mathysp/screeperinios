@@ -54,7 +54,7 @@ module.exports = {
     toSpawnAt = toSpawnAt[0];
 
     console.log(Memory.spawnQueue);
-    
+
     this.spawn(role.type, role.memory, toSpawnAt);
     
     Memory.spawnQueue.shift();
@@ -118,6 +118,12 @@ module.exports = {
           break;
         case WORK:
           total += 100
+          break;
+        case TOUGH:
+          total += 10
+          break;
+        case ATTACK:
+          total += 80
           break;
       }
     }
