@@ -46,6 +46,7 @@ module.exports = {
 
       var states = this.states;
       Memory.requiredCreeps = states[1];
+      console.log(states[1]);
     }
   },
 
