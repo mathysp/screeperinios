@@ -22,9 +22,10 @@ module.exports = {
 
     console.log(Memory.spawnQueue);
 
+    var spawns = null;
     for(var index in Game.rooms) {
       var room = Game.rooms[index];
-      var spawns = room.find(FIND_MY_SPAWNS, {
+      spawns = room.find(FIND_MY_SPAWNS, {
         filter: function(spawn) {
           return spawn.spawning === undefined || spawn.spawning === null;
         }});
@@ -80,7 +81,7 @@ module.exports = {
     var name = null;
     while(name == null) {
       nameCount ++;
-      var tryName = role.nameCount;
+      var tryName = role + nameCount;
       if(Game.creeps[tryName] == undefined)
           name = tryName;
     }
