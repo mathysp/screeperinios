@@ -32,8 +32,8 @@ module.exports = {
     if(Memory.sources == undefined)
         Memory.sources = { };
 
-    if(Memory.currentRoomLevel == undefined)
-      Memory.currentRoomLevel = 1;
+    if(Memory.currentRCL == undefined)
+      Memory.currentRCL = 1;
 
     if(Memory.requiredCreeps == undefined) {
       var states = this.states;
@@ -48,15 +48,16 @@ module.exports = {
       room = Game.rooms[index];
     }
 
-    var roomControllerLevel = room.controller.level;
-    if(Memory.currentRoomLevel != roomControllerLevel) {
+    var RCL = room.controller.level;
+    if(Memory.currentRCL != RCL) {
       //var memory = this.memory;
 
       var states = this.states;
-      var currentState = states[roomControllerLevel];
+      var currentState = states[RCL];
+      console.log('Room ' + room.name + ' levelled up to ' + RCL + '!');
       Memory.requiredCreeps = currentState.creepList;
 
-      Memory.currentRoomLevel = roomControllerLevel;
+      Memory.currentRCL = RCL;
     }
 
 
