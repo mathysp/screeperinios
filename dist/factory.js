@@ -45,9 +45,12 @@ module.exports = {
       ];*/
 
       var states = this.states;
+      console.log(states);
       var currentState = states.filter(function(states){
         return states.level == 1;
       });
+      console.log(currentState);
+      console.log(currentState.creepList);
       Memory.requiredCreeps = currentState.creepList;
     }
   },
