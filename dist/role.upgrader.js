@@ -41,4 +41,4 @@ var upgrader = {
 
 };
 
-module.exports = ugprader;
+module.exports = upgrader;
