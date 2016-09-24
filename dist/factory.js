@@ -24,7 +24,7 @@ module.exports = {
 
   run: function () {
     this.updateMemory();
-    this.spawnRequiredCreeps();
+   // this.spawnRequiredCreeps();
   },
 
   memory: function () {
@@ -58,10 +58,9 @@ module.exports = {
       var currentState = states[RCL];
       console.log('Room ' + room.name + ' levelled up to ' + RCL + '!');
       Memory.requiredCreeps = currentState.creepList;
-      this.spawnRequiredCreeps();
       Memory.currentRCL = RCL;
     }
-
+    this.spawnRequiredCreeps();
 
   },
 
