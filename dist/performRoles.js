@@ -1,5 +1,5 @@
 module.exports = function(creeps) {
-  var roleManager = require('rolemanager');
+  var roleManager = require('roleManager');
   var roles = { };
   
   for(var name in creeps) {
