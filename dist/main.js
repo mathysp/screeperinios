@@ -6,7 +6,7 @@ var factory = require('factory');
 factory.init();
 factory.run();
 
-spawner.spawnNextInQue();
+spawner.spawnNextInQueue();
 
 // factory.buildArmyWhileIdle();
 
