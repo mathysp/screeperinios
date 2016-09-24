@@ -56,7 +56,7 @@ var proto = {
 
     for(var i in parts) {
       if((parts[i].length - 5) <= extensions) {
-        return parts[i].toUpperCase();
+        return parts[i];
       }
     }
   },
