@@ -2,7 +2,7 @@ module.exports = function(creeps) {
   var roleManager = require('rolemanager');
   var roles = { };
   
-  for(let name in creeps) {
+  for(var name in creeps) {
     var creep = creeps[name];
     if(creep.spawning || creep.memory.role == undefined || (creep.memory.active !== undefined && !creep.memory.active))
         continue;

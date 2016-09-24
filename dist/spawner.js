@@ -29,7 +29,7 @@ module.exports = {
     }
    /* var spawns = Game.getRoom('1-1').find(Game.MY_SPAWNS, {
         filter: function(spawn) {
-          return spawn.spawning === unfedined || spawn.spawning === null;
+          return spawn.spawning === undefined || spawn.spawning === null;
         }
     });*/
 
