@@ -43,6 +43,8 @@ module.exports = {
         'builder', // 3
         'upgrader' // 3
       ];*/
+
+      var states = this.states;
       Memory.requiredCreeps = states[1];
     }
   },
