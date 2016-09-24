@@ -5,14 +5,24 @@ var helper = {
 
   assignMiner: function() {
     var creep = this.creep;
-    var miner = creep.pos.findNearest(Game.MY_CREEPS, {
+
+    var miner = creep.pos.findClosestByPath(FIND_MY_CREEPS, {
+      filter: function(miner) {
+        if(minder.memory.role == 'miner' && miner.memory.helpers.length < miner.memory.helpersNeeded)
+          return true;
+
+        return false;
+      }
+    });
+
+ /*   var miner = creep.pos.findNearest(Game.MY_CREEPS, {
       filter: function(miner) {
         if(minder.memory.role == 'miner' && miner.memory.helpers.length < miner.memory.helpersNeeded)
             return true;
 
         return false;
       }
-    });
+    });*/
 
     if(minder == undefined)
         return;

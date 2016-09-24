@@ -36,8 +36,6 @@ module.exports = {
     if(!spawns.length)
         return;
 
-    console.log('spawns found');
-
     var role = Memory.spawnQueue[0];
 
     if(typeof role == "string") {
