@@ -24,12 +24,23 @@ module.exports = {
       Memory.requiredCreeps = [
         'miner', // 1
         'builder', // 1
-        'miner'  // 2
+        'miner',  // 2
+        'builder' // 2
+
       ];
     }
   },
 
   spawnRequiredCreeps: function () {
+
+    // Memory Clearing
+    for(var name in Memory.creeps) {
+      if(!Game.creeps[name]) {
+        delete Memory.creeps[name];
+        console.log('Clearing non-existing creep memory:', name);
+      }
+    }
+
     var requiredCreeps = Memory.requiredCreeps;
 
     var gatheredCreeps = { };
