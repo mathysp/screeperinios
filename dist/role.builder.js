@@ -24,7 +24,7 @@ var builder = {
     if(creep.memory.building) {
       // Repairing Half Damaged building
       var damagedBuildings = creep.room.find(FIND_MY_STRUCTURES);
-      var toRepaid = [ ];
+      var toRepair = [ ];
       for(var index in damagedBuildings)
         if((damagedBuildings[index].hits / damagedBuildings[index].hitsMax) < 0.5)
           toRepair.push(damagedBuildings[index]);
@@ -44,7 +44,7 @@ var builder = {
           creep.moveTo(targets[0]);
         }
       }
-      
+
     } else {
       var storages = creep.room.find(FIND_STRUCTURES, {
         filter: (structure) => {
