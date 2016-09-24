@@ -22,6 +22,8 @@ module.exports = {
 
     if(Memory.requiredCreeps == undefined) {
       Memory.requiredCreeps = [
+        'miner',
+        'miner',
         'miner' //1
       ];
     }
