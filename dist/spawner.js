@@ -20,11 +20,18 @@ module.exports = {
     if(!Memory.spawnQueue.length)
         return;
 
-    var spawns = Game.getRoom('1-1').find(Game.MY_SPAWNS, {
+    for(var index in Game.rooms) {
+      var room = Game.rooms[index];
+      var spawns = room.find(FIND_MY_SPAWNS, {
+        filter: function(spawn) {
+          return spawn.spawning === undefined || spawn.spawning === null;
+        }});
+    }
+   /* var spawns = Game.getRoom('1-1').find(Game.MY_SPAWNS, {
         filter: function(spawn) {
           return spawn.spawning === unfedined || spawn.spawning === null;
         }
-    });
+    });*/
 
     if(!spawns.length)
         return;

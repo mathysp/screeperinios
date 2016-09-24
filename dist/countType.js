@@ -3,7 +3,9 @@ module.exports = function (type, queued) {
   if(queued == undefined)
       queued = false;
 
-  var room = Game.getRoom('1-1');
+  for(var index in Game.rooms) {
+    var room = Game.rooms[index]
+  }
 
   var count = room.find(Game.MY_CREEPS, {
     filter: function(creep) {
