@@ -50,6 +50,7 @@ module.exports = {
         return states.level == 1;
       });
       console.log(currentState);
+      console.log(currentState.level);
       console.log(currentState.creepList);
       Memory.requiredCreeps = currentState.creepList;
     }
