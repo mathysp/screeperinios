@@ -3,13 +3,13 @@ var countType = require('countType');
 module.exports = {
   states: [
       // [RoomLevel, [unit, order]]
-      {level: 1, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {level: 2, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {level: 3, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {level: 4, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {level: 5, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {level: 6, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {level: 7, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']}
+      {level: 1, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader']},
+      {level: 2, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader']},
+      {level: 3, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader']},
+      {level: 4, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader']},
+      {level: 5, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader']},
+      {level: 6, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader']},
+      {level: 7, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader']}
   ],
 
   init: function () {
@@ -32,20 +32,11 @@ module.exports = {
     if(Memory.sources == undefined)
         Memory.sources = { };
 
-    if(Memory.requiredCreeps == undefined) {
-      /*Memory.requiredCreeps = [
-        'miner', // 1
-        'builder', // 1
-        'upgrader', // 1
-        'miner',  // 2
-        'builder', // 2
-        'upgrader' // 2
-        'builder', // 3
-        'upgrader' // 3
-      ];*/
+    if(Memory.currentRoomLevel == undefined)
+      Memory.currentRoomLevel = 1;
 
+    if(Memory.requiredCreeps == undefined) {
       var states = this.states;
-      console.log(states);
       var currentState = states[0];
       Memory.requiredCreeps = currentState.creepList;
     }
@@ -56,6 +47,19 @@ module.exports = {
     for(var index in Game.rooms) {
       room = Game.rooms[index];
     }
+
+    var roomControllerLevel = room.controller.level;
+    if(Memory.currentRoomLevel != roomControllerLevel) {
+      //var memory = this.memory;
+
+      var states = this.states;
+      var currentState = states[roomControllerLevel];
+      Memory.requiredCreeps = currentState.creepList;
+
+      Memory.currentRoomLevel = roomControllerLevel;
+    }
+
+
   },
 
   spawnRequiredCreeps: function () {
