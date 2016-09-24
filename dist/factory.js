@@ -24,8 +24,10 @@ module.exports = {
       Memory.requiredCreeps = [
         'miner', // 1
         'builder', // 1
+        'upgrader', // 1
         'miner',  // 2
-        'builder' // 2
+        'builder', // 2
+        'upgrader' // 2
 
       ];
     }

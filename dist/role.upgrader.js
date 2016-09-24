@@ -7,15 +7,34 @@ var upgrader = {
 
   action: function () {
 
-    if(creep.carry.energy == 0) {
-      var closestSpawn = creep.pos.findClosestByPath(STRUCTURE_SPAWN)
-      creep.moveTo(closestSpawn);
-      closestSpawn.transferEnergy(creep);
-    } else {
-      
+    var creep = this.creep;
+
+    if(creep.memory.upgrading && creep.carry.energy == 0) {
+      creep.memory.upgrading = false;
+      creep.say('Recharging!');
+    }
+    if(!creep.memory.upgrading && creep.carry.energy == creep.carryCapacity) {
+      creep.memory.upgrading = true;
+      creep.say('Upgrading!');
     }
 
-
+    if(creep.memory.upgrading) {
+      // Go upgradestuff
+      if(creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+        creep.moveTo(creep.room.controller);
+      }
+    } else {
+      var storages = creep.room.find(FIND_STRUCTURES, {
+        filter: (structure) => {
+          return (structure.structureType == STRUCTURE_EXTENSION
+              || structure.structureType == STRUCTURE_SPAWN)
+              && structure.energy == structure.energyCapacity;
+        }
+      })
+      if(creep.withdraw(storages[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+        creep.moveTo(storages[0]);
+      }
+    }
 
   }
 
