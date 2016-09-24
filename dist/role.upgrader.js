@@ -28,7 +28,7 @@ var upgrader = {
         filter: (structure) => {
           return (structure.structureType == STRUCTURE_EXTENSION
               || structure.structureType == STRUCTURE_SPAWN)
-              && structure.energy == structure.energyCapacity;
+              && structure.energy > 0;
         }
       })
       if(creep.withdraw(storages[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
