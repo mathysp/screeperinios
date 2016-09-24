@@ -115,7 +115,7 @@ module.exports = {
           total += 50
           break;
         case WORK:
-          total += 20
+          total += 100
           break;
       }
     }
