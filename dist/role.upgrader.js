@@ -1,7 +1,6 @@
 var upgrader = {
   parts: [
       [MOVE, CARRY, WORK],
-      [MOVE, CARRY, WORK, MOVE, CARRY],
       [MOVE, CARRY, WORK, MOVE, CARRY, WORK]
   ],
 
