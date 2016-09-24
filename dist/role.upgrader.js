@@ -3,7 +3,7 @@ var upgrader = {
       [MOVE, CARRY, WORK],
       [MOVE, CARRY, WORK, MOVE, CARRY],
       [MOVE, CARRY, WORK, MOVE, CARRY, WORK]
-  ]
+  ],
 
   action: function () {
 
