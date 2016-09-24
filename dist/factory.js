@@ -2,10 +2,12 @@ var countType = require('countType');
 
 module.exports = {
   states: [
+      // @TODO: Rework creepList into a dynamic system
+      // @TODO: Add structure planner thingy
       // [RoomLevel, [unit, order]]
       {level: 1, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader']},
-      {level: 2, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {level: 3, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader']},
+      {level: 2, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader']},
+      {level: 3, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'builder', 'builder', 'builder', 'builder', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader']},
       {level: 4, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader']},
       {level: 5, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader']},
       {level: 6, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader']},

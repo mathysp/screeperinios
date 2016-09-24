@@ -1,7 +1,7 @@
 var builder = {
   parts: [
     [MOVE, CARRY, WORK],
-    [MOVE, CARRY, WORK, CARRY, WORK]
+    [MOVE, CARRY, WORK, MOVE, CARRY, WORK]
   ],
 
 
