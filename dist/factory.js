@@ -56,7 +56,7 @@ module.exports = {
       var currentState = states[RCL];
       console.log('Room ' + room.name + ' levelled up to ' + RCL + '!');
       Memory.requiredCreeps = currentState.creepList;
-
+      this.spawnRequiredCreeps();
       Memory.currentRCL = RCL;
     }
 
