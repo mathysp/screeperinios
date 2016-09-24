@@ -54,10 +54,9 @@ var proto = {
 
     parts.reverse();
 
-    for(var i in parts)
-    {
+    for(var i in parts) {
       if((parts[i].length - 5) <= extensions) {
-        return parts[i];
+        return parts[i].toUpperCase();
       }
     }
   },

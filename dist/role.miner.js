@@ -5,7 +5,8 @@
  */
 var miner = {
   parts: [
-      [MOVE, WORK, WORK, WORK, WORK]
+    [MOVE, WORK, WORK, WORK, WORK],
+    [MOVE, WORK, WORK, WORK, WORK, WORK]
   ],
 
   getOpenSource: function() {
