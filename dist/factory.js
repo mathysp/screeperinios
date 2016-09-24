@@ -7,7 +7,7 @@ module.exports = {
       // [RoomLevel, [unit, order]]
       {level: 1, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'warrior']},
       {level: 2, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'warrior', 'builder', 'upgrader', 'builder', 'upgrader', 'warrior', 'warrior', 'warrior', 'upgrader', 'upgrader', 'upgrader', 'upgrader']},
-      {level: 3, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'warrior', 'builder', 'upgrader', 'builder', 'upgrader', 'warrior', 'warrior', 'warrior', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'builder', 'builder', 'builder', 'builder', 'upgrader', 'upgrader', 'upgrader', 'upgrader''upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader']}
+      {level: 3, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'warrior', 'builder', 'upgrader', 'builder', 'upgrader', 'warrior', 'warrior', 'warrior', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'builder', 'builder', 'builder', 'builder', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader']}
       /*{level: 4, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader']},
       {level: 5, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader']},
       {level: 6, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader']},
