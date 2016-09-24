@@ -20,6 +20,8 @@ module.exports = {
     if(!Memory.spawnQueue.length)
         return;
 
+    console.log(Memory.spawnQueue);
+
     for(var index in Game.rooms) {
       var room = Game.rooms[index];
       var spawns = room.find(FIND_MY_SPAWNS, {
