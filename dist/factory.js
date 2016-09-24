@@ -3,13 +3,13 @@ var countType = require('countType');
 module.exports = {
   states: [
       // [RoomLevel, [unit, order]]
-      {1: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {2: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {3: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {4: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {5: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {6: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {7: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']}
+      {level: 1, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
+      {level: 2, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
+      {level: 3, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
+      {level: 4, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
+      {level: 5, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
+      {level: 6, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']},
+      {level: 7, creepList: ['miner', 'miner', 'builder', 'upgrader', 'builder', 'upgrader']}
   ],
 
   init: function () {
@@ -45,8 +45,10 @@ module.exports = {
       ];*/
 
       var states = this.states;
-      Memory.requiredCreeps = states[1];
-      console.log(states[1]);
+      var currentState = states.filter(function(states){
+        return states.level == 1;
+      });
+      Memory.requiredCreeps = currentState.creepList;
     }
   },
 
