@@ -83,7 +83,7 @@ module.exports = {
 
       var found = countType(type, true);
       if(neededToSkip > found) {
-        Memory.spawnQueue.push(type);
+        Memory.spawnQueue.unshift(type);
       }
 
       gatheredCreeps[type]++;
