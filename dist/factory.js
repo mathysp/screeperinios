@@ -7,11 +7,10 @@ module.exports = {
       // [RoomLevel, [unit, order]]
       {level: 1, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'warrior']},
       {level: 2, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'warrior', 'builder', 'upgrader', 'builder', 'upgrader', 'warrior', 'warrior', 'warrior', 'upgrader', 'upgrader', 'upgrader', 'upgrader']},
-      {level: 3, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'warrior', 'builder', 'upgrader', 'builder', 'upgrader', 'warrior', 'warrior', 'warrior', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'builder', 'builder', 'builder', 'builder', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader', 'upgrader']}
-      /*{level: 4, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader', 'builder', 'upgrader']},
-      {level: 5, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader']},
-      {level: 6, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader']},
-      {level: 7, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader']}*/
+      {level: 3, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'warrior', 'builder', 'upgrader', 'builder', 'upgrader', 'warrior', 'warrior', 'warrior', 'upgrader', 'upgrader', 'upgrader', 'upgrader']},
+      {level: 4, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'warrior', 'builder', 'upgrader', 'builder', 'upgrader', 'warrior', 'warrior', 'warrior', 'upgrader', 'upgrader', 'upgrader', 'upgrader']},
+      {level: 5, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'warrior', 'builder', 'upgrader', 'builder', 'upgrader', 'warrior', 'warrior', 'warrior', 'upgrader', 'upgrader', 'upgrader', 'upgrader']},
+      {level: 6, creepList: ['miner', 'miner', 'upgrader', 'builder', 'upgrader', 'warrior', 'builder', 'upgrader', 'builder', 'upgrader', 'warrior', 'warrior', 'warrior', 'upgrader', 'upgrader', 'upgrader', 'upgrader']},
   ],
 
   init: function () {
@@ -52,8 +51,6 @@ module.exports = {
 
     var RCL = room.controller.level;
     if(Memory.currentRCL != RCL) {
-      //var memory = this.memory;
-
       var states = this.states;
       var currentState = states[RCL];
       console.log('Room ' + room.name + ' levelled up to ' + RCL + '!');
